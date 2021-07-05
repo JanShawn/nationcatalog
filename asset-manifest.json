@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nationcatalog-app/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/nationcatalog-app/static/js/main.1b0670c1.chunk.js",
+    "main.js.map": "/nationcatalog-app/static/js/main.1b0670c1.chunk.js.map",
+    "runtime-main.js": "/nationcatalog-app/static/js/runtime-main.ab13205b.js",
+    "runtime-main.js.map": "/nationcatalog-app/static/js/runtime-main.ab13205b.js.map",
+    "static/js/2.1322a35f.chunk.js": "/nationcatalog-app/static/js/2.1322a35f.chunk.js",
+    "static/js/2.1322a35f.chunk.js.map": "/nationcatalog-app/static/js/2.1322a35f.chunk.js.map",
+    "static/js/3.13b642fa.chunk.js": "/nationcatalog-app/static/js/3.13b642fa.chunk.js",
+    "static/js/3.13b642fa.chunk.js.map": "/nationcatalog-app/static/js/3.13b642fa.chunk.js.map",
+    "index.html": "/nationcatalog-app/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/nationcatalog-app/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.1322a35f.chunk.js.LICENSE.txt": "/nationcatalog-app/static/js/2.1322a35f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab13205b.js",
+    "static/js/2.1322a35f.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.1b0670c1.chunk.js"
+  ]
+}
