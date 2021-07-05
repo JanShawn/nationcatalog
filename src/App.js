@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useState, useEffect } from 'react';
+import { DataGrid } from '@material-ui/data-grid';
+
 
 function App() {
+  const [nationList, setNation] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  // 欄位
+  const columns = [
+    { field: 'id', headerName: 'areaID', flex: 1, hide: true },
+    {
+      field: 'flag', headerName: '國旗', flex: 1,
+      renderCell: (params) => {
+        return <img width="50px" src={params.value} />
+      }
+    },
+    { field: 'name', headerName: '國家', flex: 1, },
+    { field: 'alpha2Code', headerName: '2位國家代碼', flex: 1, },
+    { field: 'alpha3Code', headerName: '3位國家代碼', flex: 1, },
+    { field: 'nativeName', headerName: ' 母語名稱', flex: 1, },
+    { field: 'altSpellings', headerName: '替代國家名稱', flex: 1, },
+    { field: 'callingCodes', headerName: '國際電話區號', type: 'number', flex: 1, },
+  ];
+
+  function getData() {
+    axios.get('https://restcountries.eu/rest/v2/all')
+      .then((res) => {
+        const data = res.data;
+        setNation(data.map((d, index) => { return { ...d, id: index } }));
+      })
+      .catch((err) => console.log(err));
+  }
+  // function getSpecData(params) {
+  //   axios.get('https://restcountries.eu/rest/v2/name/Algeria')
+  //     .then((res) => {
+  //       const data = res.data;
+  //       setNation(data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: '100%' }}>
+      <DataGrid
+        autoHeight={true}
+        rows={nationList}
+        columns={columns}
+        pageSize={25}
+        disableSelectionOnClick
+      />
     </div>
   );
 }
